@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+int  main101()
+{
+    int *p =(int *) malloc(sizeof(int));
+    *p =10;
+    free(p);
+    int *p2 =new int;//分配基础类型
+    *p2 = 20;
+    delete p2;
+
+
+    int *p3 = new int (30);//分配基础类型带初始化
+    delete p3;
+    cout<<*p3<<endl;
+    return 0;
+}
+void main102()
+{
+    int * p=(int*)malloc(sizeof(int)*10);
+    p[0] =1 ;
+    free (p);
+    //c++分配数组
+    int *parray = new int[10];
+    parray[1] = 2;
+    delete []parray;//delete []name;
+
+
+}
+class Test
+{
+public:
+    Test(int _a)
+    {
+        a  = _a;
+    }
+    ~Test()
+    {
+        cout<<"西沟函数执行"<<endl;
+    }
+private:
+    int a;
+};
+
+void main()
+{
+    Test *pt1 = new Test(10);
+    delete pt1;
+    cout << "hello" <<endl;
+}
